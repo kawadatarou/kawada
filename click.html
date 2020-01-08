@@ -1,0 +1,84 @@
+<html>
+<script>
+
+  myTotal = 0;
+  myInput = "";
+  myCalc= "+";
+  flg = 1;
+    myInput = "";
+    function num(myData) {
+        flg = 0 ;
+        myInput += myData;
+
+
+        document.myform.box.value = myInput;
+    }
+
+    function myCalculate(myData){
+        if(flg == 0){
+           flg = 1 ;
+           myWork =myTotal + myCalc + myInput;
+           myTotal = eval(myWork);
+           myInput= "";
+           document.myform.box.value = myTotal;
+
+        }
+    }
+if(myData == "="){
+    myTotal= 0;
+    
+
+}else{
+    myCalc = myData;
+}
+
+function myC(){
+    myTotal =0;
+    myCalc ="+";
+    myInput="";
+    document.myform.box.value = myTotal;
+}
+
+</script>
+
+
+
+
+
+
+<p>button</p>
+
+<form name="myform">
+    <input type="text" name="box">
+    <br>
+    <tr>
+        <td align="center"><input type="button" value="7" onclick='num(7)'></td>
+        <td align="center"><input type="button" value="8" onclick='num(8)'></td>
+        <td align="center"><input type="button" value="9" onclick='num(9)'></td>
+        <td align="center"><input type="button" value="÷" onclick="myCalculate('/')"></td>
+    </tr>
+    </br>
+
+    <td align="center"><input type="button" value="4" onclick='num(4)'></td>
+    <td align="center"><input type="button" value="5" onclick='num(5)'></td>
+    <td align="center"><input type="button" value="6" onclick='num(6)'></td>
+    <td align="center"><input type="button" value="×" onclick="myCalculate('*')"></td>
+    <br>
+    <td align="center"><input type="button" value="1" onclick='num(1)'></td>
+    <td align="center"><input type="button" value="2" onclick='num(2)'></td>
+    <td align="center"><input type="button" value="3" onclick='num(3)'></td>
+    <td align="center"><input type="button" value="－" onclick="myCalculate('-')"></td>
+    </br>
+    <td align="center"><input type="button" value="0" onclick='num(0)'></td>
+    <td align="center"><input type="button" value=" ・ " onclick="num('.')"></td>
+    <td align="center"><input type="button" value=" ＋ " onclick="myCalculate('+')"></td>
+    <td align="center"><input type="button" value="＝" onclick="myCalculate('=')"></td>
+    
+    
+
+</form>
+
+
+
+
+</html>
